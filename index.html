@@ -740,4 +740,544 @@
   padding: 2rem;
   max-width: 400px;
   margin: 2rem auto;
-  border
+  border-radius: 1.5rem;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  }.premium-feedback-form h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  color: #00ffc6;
+  }
+  
+  .premium-feedback-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  }
+  
+  .premium-feedback-form input,
+  .premium-feedback-form textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 0.8rem;
+  margin-bottom: 1.2rem;
+  background-color: rgba(255,255,255,0.1);
+  color: #fff;
+  font-size: 1rem;
+  }
+  
+  .premium-feedback-form input::placeholder,
+  .premium-feedback-form textarea::placeholder {
+  color: #ccc;
+  }
+  
+  .premium-feedback-form button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.8rem;
+  background: #00ffc6;
+  border: none;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  }
+  
+  .premium-feedback-form button:hover {
+  background: #00e6b0;
+  transform: scale(1.02);
+  }
+  
+  .submit-message {
+  display: none;
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #dfffe2;
+  color: #0a6200;
+  border-radius: 0.8rem;
+  text-align: center;
+  font-weight: 600;
+  }
+  
+  .submit-message.show {
+  display: block;
+  animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+  }
+  
+  .material-icons-outlined {
+  vertical-align: middle;
+  }
+  
+  </style>
+  </head>
+  <body>
+  <div class="premium-feedback-form">
+  <h2><span class="material-icons-outlined">thumb_up_alt</span> Submit Your Feedback</h2>
+  <form id="feedbackForm">
+  <label for="name">Name</label>
+  <input type="text" id="name" name="name" placeholder="Your Name" required><label for="email">Email</label>
+  <input type="email" id="email" name="email" placeholder="your@email.com" required>
+  
+  <label for="feedback">Your Feedback</label>
+  <textarea id="feedback" name="feedback" rows="4" placeholder="Share your thoughts..." required></textarea>
+  
+  <button type="submit">
+  <span class="material-icons-outlined">send</span> Submit
+  </button>
+  </form>
+  <div id="submitMessage" class="submit-message">
+  <span class="material-icons-outlined" style="color:green; font-size: 1.5rem;">verified</span>
+  Feedback submitted successfully!
+  </div>
+  
+  </div>
+  </body></html>
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ludo BD Premium Display</title>
+  <style>
+    .exclusive-section {
+      --primary: #8e2de2;
+      --secondary: #4a00e0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #ffffff;
+      margin: 0;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-sizing: border-box;
+    }
+    .exclusive-section * {
+      box-sizing: border-box;
+    }
+    .exclusive-section .main-phone-wrapper {
+      position: relative;
+      width: 200px;
+      margin-bottom: 40px;
+      z-index: 1;
+    }
+    .exclusive-section .main-phone {
+      width: 90%;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    }
+    .exclusive-section .dots {
+      position: absolute;
+      top: 50%;
+      right: -25px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .exclusive-section .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--primary);
+      opacity: 0.3;
+      transition: all 0.3s ease;
+    }
+    .exclusive-section .dot.active {
+      opacity: 1;
+    }
+    .exclusive-section .scroll-up-btn {
+      width: 45px;
+      height: 45px;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 22px;
+      margin-top: 30px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      text-decoration: none;
+    }
+    .exclusive-section .scroll-up-btn:hover {
+      transform: scale(1.05);
+    }
+    .exclusive-section .floating-phones {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 60px;
+      flex-wrap: wrap;
+    }
+    .exclusive-section .floating-phones img {
+      width: 110px;
+      transform: rotate(-10deg);
+      border-radius: 25px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+    .exclusive-section .floating-phones img:nth-child(2) {
+      transform: rotate(0deg);
+    }
+    .exclusive-section .floating-phones img:nth-child(3) {
+      transform: rotate(10deg);
+    }
+    .exclusive-section .download-section {
+      text-align: center;
+      margin-top: 50px;
+    }
+    .exclusive-section .download-section p {
+      color: #999;
+      font-size: 14px;
+      margin: 0;
+    }
+    .exclusive-section .download-section h2 {
+      font-size: 24px;
+      margin: 10px 0;
+      color: #222;
+    }
+    .exclusive-section .download-section span {
+      color: var(--secondary);
+    }
+    .exclusive-section .download-section .desc {
+      color: #555;
+      font-size: 15px;
+      margin: 10px auto;
+      max-width: 400px;
+    }
+    .exclusive-section .playstore-btn {
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      color: white;
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-size: 16px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 20px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="exclusive-section">
+    <!-- Phone UI -->
+    <div class="main-phone-wrapper">
+      <img class="main-phone" src="https://assets.onecompiler.app/43ea4pg72/43ejc7pju/Screenshot_20250412-045625.png" alt="Main Phone UI">
+      <div class="dots">
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+    </div><!-- Scroll Up Button -->
+<a href="#top" class="scroll-up-btn">
+  ↑
+</a>
+
+<!-- Floating Phones -->
+<div class="floating-phones">
+  <img src="https://assets.onecompiler.app/43ea4pg72/43ejc7pju/Screenshot_20250412-045621.png" alt="Phone 1">
+  <img src="https://assets.onecompiler.app/43ea4pg72/43ejc7pju/Screenshot_20250412-045625.png" alt="Phone 2">
+  <img src="https://assets.onecompiler.app/43ea4pg72/43ejc7pju/Screenshot_20250412-045634.png" alt="Phone 3">
+</div>
+
+<!-- Download Section -->
+<div class="download-section">
+  <p>Download</p>
+  <h2>Download the Latest Version of <span>Our App</span></h2>
+  <p class="desc">Get the latest version of LUDO BD and start playing today. Click below to download now!</p>
+  <a href="#" class="playstore-btn">Available On Play Store</a>
+</div>
+
+  </div>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Exclusive Live Chat</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet"/>
+
+<style>
+.exclusive-chatbox-wrapper {
+font-family: 'Poppins', sans-serif;
+}
+.exclusive-chatbox-wrapper .chatbot-btn {
+position: fixed;
+bottom: 30px;
+right: 30px;
+background: linear-gradient(135deg, #7f00ff, #e100ff);
+color: #fff;
+border: none;
+border-radius: 50%;
+width: 65px;
+height: 65px;
+font-size: 30px;
+display: flex;
+justify-content: center;
+align-items: center;
+box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+z-index: 999;
+cursor: pointer;
+transition: 0.3s ease;
+}
+.exclusive-chatbox-wrapper .chatbot-btn:hover {
+transform: scale(1.1);
+}
+.exclusive-chatbox-wrapper .chatbox {
+position: fixed;
+bottom: 110px;
+right: 30px;
+width: 340px;
+background: linear-gradient(to bottom right, #1f1c2c, #928dab);
+color: white;
+border-radius: 20px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+overflow: hidden;
+display: none;
+z-index: 998;
+backdrop-filter: blur(12px);
+}
+.exclusive-chatbox-wrapper .chat-header {
+padding: 18px;
+background: linear-gradient(to right, #8e2de2, #4a00e0);
+font-size: 17px;
+font-weight: bold;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.exclusive-chatbox-wrapper .chat-header i {
+cursor: pointer;
+}
+.exclusive-chatbox-wrapper .chat-options {
+padding: 20px;
+}
+.exclusive-chatbox-wrapper .chat-options button {
+width: 100%;
+padding: 12px;
+margin: 10px 0;
+border: none;
+border-radius: 12px;
+background: linear-gradient(135deg, #ff512f, #dd2476);
+color: white;
+font-size: 15px;
+font-weight: bold;
+cursor: pointer;
+box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+transition: all 0.3s;
+}
+.exclusive-chatbox-wrapper .chat-options button:hover {
+transform: scale(1.05);
+}
+.exclusive-chatbox-wrapper .chat-response {
+padding: 20px;
+font-size: 14px;
+line-height: 1.6;
+}
+.exclusive-chatbox-wrapper .confirm-buttons {
+display: flex;
+gap: 10px;
+margin-top: 15px;
+}
+.exclusive-chatbox-wrapper .confirm-buttons button {
+flex: 1;
+padding: 10px;
+border-radius: 10px;
+font-weight: bold;
+border: none;
+cursor: pointer;
+transition: 0.3s;
+}
+.exclusive-chatbox-wrapper .yes-btn {
+background: linear-gradient(135deg, #00c853, #43e97b);
+color: #fff;
+}
+.exclusive-chatbox-wrapper .yes-btn:hover,
+.exclusive-chatbox-wrapper .no-btn:hover {
+transform: scale(1.05);
+}
+.exclusive-chatbox-wrapper .no-btn {
+background: linear-gradient(135deg, #d50000, #ff5252);
+color: #fff;
+}
+</style>
+</head>
+<body>
+<div class="exclusive-chatbox-wrapper">
+<button class="chatbot-btn" onclick="toggleChat()">
+<i class="bi bi-chat-dots"></i>
+</button>
+<div class="chatbox" id="chatbox">
+<div class="chat-header">
+<span>Live Support</span>
+<i class="bi bi-x-circle" onclick="toggleChat()"></i>
+</div>
+<div class="chat-options">
+<button onclick="showSupportMessage()">
+<i class="bi bi-headset"></i> Customer Support
+</button>
+<button onclick="showDeveloperMessage()">
+<i class="bi bi-person-video3"></i> Developer Contact
+</button>
+</div>
+<div class="chat-response" id="responseBox"></div>
+</div>
+</div>
+
+<script>
+function toggleChat() {
+const box = document.getElementById("chatbox");
+box.style.display = box.style.display === "block" ? "none" : "block";
+document.getElementById("responseBox").innerHTML = '';
+}
+
+function showSupportMessage() {
+document.getElementById("responseBox").innerHTML = `
+আমাদের কাস্টমার সাপোর্ট টিম সর্বদা আপনার পাশে আছে!
+<br><br>
+<strong>Support Time:</strong> প্রতিদিন সকাল ১০টা - রাত ১০টা পর্যন্ত।
+<br><br>
+WhatsApp: <a href="https://wa.me/8801300000000" style="color:#90ee90; font-weight:bold;" target="_blank">Click to Chat</a>
+`;
+}
+
+function showDeveloperMessage() {
+document.getElementById("responseBox").innerHTML = `
+<strong>দ্রষ্টব্য:</strong> এই ওয়েবসাইটের সাথে <strong>Developer Swygen</strong> এর সরাসরি কোনো সম্পর্ক নেই।
+<br><br>
+আপনি যদি এই রকম এক্সক্লুসিভ ডিজাইন, উন্নত ফিচার এবং হাই সিকিউরিটি ওয়েবসাইট তৈরি করতে চান,
+তাহলে নিচে <strong>Yes</strong> ক্লিক করে যোগাযোগ করুন।
+<div class="confirm-buttons">
+<button class="yes-btn" onclick="window.open('https://wa.me/message/BQ77IMY2MHW6E1', '_blank')">Yes</button>
+<button class="no-btn" onclick="toggleChat()">No</button>
+</div>
+`;
+}
+</script>
+</body>
+</html>
+</body></html><style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+  @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+  .swygen-footer {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, rgba(26,26,46,0.9), rgba(15,52,96,0.9));
+    color: #f0f0f0;
+    padding: 60px 30px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    box-shadow: 0 0 60px rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    isolation: isolate;
+    position: relative;
+    z-index: 1;
+  }
+
+  .swygen-footer h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+
+  .swygen-footer p, .swygen-footer a {
+    font-size: 14px;
+    color: #cccccc;
+    text-decoration: none;
+  }
+
+  .swygen-footer .swygen-social a {
+    margin-right: 15px;
+    font-size: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+    transition: all 0.4s ease;
+  }
+
+  .swygen-footer .swygen-social a:hover {
+    background: rgba(255,255,255,0.2);
+    transform: scale(1.15);
+    box-shadow: 0 0 10px #fff;
+  }
+
+  .swygen-footer .swygen-dev {
+    text-align: right;
+    font-size: 13px;
+    color: #aaa;
+  }
+
+  .swygen-footer .swygen-dev span {
+    background: linear-gradient(to right, #ffcc00, #ff0066);
+    color: black;
+    padding: 4px 10px;
+    border-radius: 30px;
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 11px;
+  }
+
+  .swygen-footer .footer-bottom {
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    margin-top: 30px;
+  }
+
+  @media (max-width: 768px) {
+    .swygen-footer .footer-grid {
+      display: block;
+      text-align: center;
+    }
+    .swygen-footer .swygen-dev {
+      text-align: center;
+      margin-top: 20px;
+    }
+  }
+</style><footer class="swygen-footer">
+  <div class="footer-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+    <div>
+      <h2>Ludo Tournament</h2>
+      <p>Join the ultimate Ludo challenge with style, pride and precision.</p>
+    </div><div>
+  <p><span class="material-icons" style="vertical-align: middle; color: #ffcc00; margin-right: 8px;">call</span>+8801XXXXXXXXX</p>
+  <p><span class="material-icons" style="vertical-align: middle; color: #ffcc00; margin-right: 8px;">email</span>contact@ludotourney.com</p>
+  <div class="swygen-social" style="margin-top: 15px;">
+    <a href="#" title="Facebook"><i class="fab fa-facebook-f" style="color: #1877f2;"></i></a>
+    <a href="#" title="Instagram"><i class="fab fa-instagram" style="color: #e1306c;"></i></a>
+    <a href="#" title="Twitter"><i class="fab fa-twitter" style="color: #1da1f2;"></i></a>
+    <a href="#" title="YouTube"><i class="fab fa-youtube" style="color: #ff0000;"></i></a>
+    <a href="#" title="Telegram"><span class="material-icons" style="color: #26A5E4;">send</span></a>
+  </div>
+</div>
+
+<div class="swygen-dev">
+  Developed by <a href="https://wa.me/message/BQ77IMY2MHW6E1" target="_blank">Swygen Official</a>
+  <span>Premium+</span>
+</div>
+
+  </div>
+  <div class="footer-bottom">&copy; 2025 Ludo Tournament. All rights reserved.</div>
+</footer><!-- Font Awesome Icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
