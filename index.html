@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Ludo Master Premium+</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali&display=swap" rel="stylesheet">
+  <style>
+    #ludo-premium-app * {
+      box-sizing: border-box;
+      font-family: 'Noto Sans Bengali', sans-serif;
+    }
+
+    #ludo-premium-app {
+      background: linear-gradient(135deg, #01060f, #0f1c2f);
+      padding: 20px;
+      max-width: 400px;
+      margin: 0 auto;
+      border-radius: 18px;
+      color: white;
+    }
+
+    .ludo-card {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(10px);
+      padding: 20px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .ludo-logo {
+      width: 120px;
+      border-radius: 12px;
+      margin-bottom: 16px;
+    }
+
+    .ludo-title {
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .ludo-sub {
+      font-size: 15px;
+      color: #ffda6b;
+      margin-bottom: 16px;
+    }
+
+    .ludo-btn {
+      display: inline-block;
+      background: linear-gradient(to right, #fbc02d, #ff9800);
+      color: #000;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 15px;
+      text-decoration: none;
+      margin-bottom: 18px;
+      transition: 0.3s ease;
+      box-shadow: 0 4px 12px rgba(255, 193, 7, 0.4);
+    }
+
+    .ludo-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .ludo-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .feature-item {
+      background: rgba(255,255,255,0.08);
+      padding: 10px 14px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: #fff8e1;
+      min-width: 140px;
+      justify-content: center;
+    }
+
+    .feature-item img {
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+    }
+
+    #ludo-toast {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1f2937;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 30px;
+      font-size: 14px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+      z-index: 999;
+      align-items: center;
+      gap: 8px;
+    }
+
+    #ludo-toast.show {
+      display: flex;
+    }
+
+    #ludo-toast img {
+      width: 18px;
+      height: 18px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="ludo-premium-app">
+  <div class="ludo-card">
+    <img src="https://assets.onecompiler.app/43ea4pg72/43ejdw4bt/Grey%20Yellow%20Minimalist%20Software%20Development%20Logo.png" class="ludo-logo" alt="Logo" />
+    <div class="ludo-title">লুডু গেইম খেলুন এবং টাকা অর্জন করুন </div>
+    <div class="ludo-sub">প্রতিদিন জিতুন রিওয়ার্ড!</div>
+
+    <a href="#" class="ludo-btn" onclick="showLudoToast()">ডাউনলোড করুন</a>
+
+    <div class="ludo-features">
+      <div class="feature-item">
+        <img src="https://assets.onecompiler.app/43ea4pg72/43ejgfyu4/cashless-payment.png" alt="Secure Payment"> নিরাপদ পেমেন্ট
+      </div>
+      <div class="feature-item">
+        <img src="https://assets.onecompiler.app/43ea4pg72/43ejgfyu4/withdraw.png" alt="Instant Withdrawals"> তাৎক্ষণিক উত্তোলন
+      </div>
+      <div class="feature-item">
+        <img src="https://assets.onecompiler.app/43ea4pg72/43ejgfyu4/24-hours.png" alt="Support"> ২৪/৭ সাপোর্ট
+      </div>
+      <div class="feature-item">
+        <img src="https://assets.onecompiler.app/43ea4pg72/43ejgfyu4/bot%20(1).png" alt="No Bots"> বট মুক্ত
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="ludo-toast">
+  <img src="https://assets.onecompiler.app/43ea4pg72/43ejdw4bt/Grey%20Yellow%20Minimalist%20Software%20Development%20Logo.png" alt="Info">
+  ডেমো অ্যাকাউন্ট | Developed by Swygen
+</div>
+
+<script>
+  function showLudoToast() {
+    const toast = document.getElementById("ludo-toast");
+    toast.classList.add("show");
+    setTimeout(() => toast.classList.remove("show"), 4000);
+  }
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Total Downloads</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Download Widget Styles */
+    .download-widget-wrapper {
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      width: 200%;
+      max-width: 400px;
+      background: transparent;
+    }
+
+    .download-widget {
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      color: #fff;
+      border-radius: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px 20px;
+      width: 100%;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+      text-align: center;
+    }
+
+    .download-widget img {
+      width: 700px;
+      height: 780px;
+      margin-right: 15px;
+    }
+
+    .download-info {
+      text-align: center;
+    }
+
+    .download-info .label {
+      font-size: 14px;
+      color: #ffc107;
+      margin-bottom: 4px;
+    }
+
+    .download-info .count {
+      font-size: 200px;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    /* Responsiveness for small devices */
+    @media (max-width: 400px) {
+      .download-widget {
+        padding: 12px 16px;
+      }
+
+      .download-info .count {
+        font-size: 18px;
+      }
+
+      .download-widget img {
+        width: 36px;
+        height: 36px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Wrapper to avoid conflicts with other code -->
+  <div class="download-widget-wrapper">
+    <div class="download-widget">
+      <img src="https://assets.onecompiler.app/43ea4pg72/43ejh4w7z/download%20(1).png" alt="Download Icon">
+      <div class="download-info">
+        <span class="label">Total Downloads</span>
+        <span class="count" id="counter">0</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function animateCount(id, end, duration = 2000) {
+      const el = document.getElementById(id);
+      let start = 0;
+      let startTime = null;
+
+      function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        const progress = Math.min((timestamp - startTime) / duration, 1);
+        const value = Math.floor(progress * end);
+        el.textContent = value.toLocaleString();
+        if (progress < 1) requestAnimationFrame(step);
+      }
+
+      requestAnimationFrame(step);
+    }
+
+    animateCount("counter", 125800);  // Change 125800 to your desired number
+  </script>
+
+</body>
+</html>
+<!DOCTYPE html><html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ludo Master - Premium Promo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #00ffcc;
+      --secondary: #ff00ff;
+      --bg: #0a0f2c;
+      --card-bg: rgba(255, 255, 255, 0.05);
+    }
+    body {
+      margin: 0;
+      font-family: 'Noto Sans Bengali', sans-serif;
+      background: radial-gradient(circle at top, var(--bg), #121c33);
+      color: #fff;
+      overflow-x: hidden;
+    }
+    .section {
+      padding: 40px 20px;
+      text-align: center;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    .title {
+      font-size: 32px;
+      font-weight: bold;
+      color: #ffeb3b;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+      margin-bottom: 30px;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .feature {
+      background: var(--card-bg);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 25px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      backdrop-filter: blur(6px);
+    }
+    .feature:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+    .feature i {
+      font-size: 40px;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+    .feature h3 {
+      color: var(--primary);
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+    .feature p {
+      font-size: 14px;
+      color: #ccc;
+    }
+    .cta {
+      margin: 40px 0;
+      text-align: center;
+    }
+    .cta button {
+      background: linear-gradient(90deg, #8a2be2, #ff00ff);
+      border: none;
+      padding: 15px 35px;
+      font-size: 20px;
+      color: white;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
+    }
+    .cta button:hover {
+      transform: scale(1.05);
+    }
+    .rating-section {
+      background: linear-gradient(145deg, #1f2a3c, #0c121f);
+      border-radius: 20px;
+      padding: 30px;
+      margin: auto;
+      max-width: 450px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      text-align: center;
+    }
+    .rating-section .stars {
+      font-size: 26px;
+      color: gold;
+      margin-bottom: 10px;
+    }
+    .rating-value {
+      font-size: 56px;
+      color: var(--primary);
+      font-weight: bold;
+      margin: 5px 0;
+    }
+    .rating-label {
+      font-size: 18px;
+      color: #ccc;
+      margin-bottom: 20px;
+    }
+    .rating-bars {
+      text-align: left;
+      padding: 0 10px;
+    }
+    .bar-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .bar-label {
+      width: 30px;
+      font-size: 14px;
+    }
+    .bar {
+      flex: 1;
+      height: 10px;
+      background: #333;
+      border-radius: 5px;
+      overflow: hidden;
+      margin-left: 10px;
+    }
+    .bar span {
+      display: block;
+      height: 100%;
+    }
+    .bar-5 span { width: 90%; background: #00ff99; }
+    .bar-4 span { width: 70%; background: #00e6c9; }
+    .bar-3 span { width: 30%; background: #ffc107; }
+    .bar-2 span { width: 10%; background: #ff9800; }
+    .bar-1 span { width: 5%; background: #f44336; }@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+@media (max-width: 600px) {
+  .title {
+    font-size: 24px;
+  }
+  .feature h3 {
+    font-size: 18px;
+  }
+  .cta button {
+    font-size: 16px;
+    padding: 12px 25px;
+  }
+  .rating-value {
+    font-size: 42px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="section title">কেন এই অ্যাপে খেলবেন?</div>
+  <div class="features">
+    <div class="feature">
+      <i class="fas fa-money-bill-wave"></i>
+      <h3>দ্রুত ডিপোজিট</h3>
+      <p>অটোমেটিক আপনার টাকা ডিপোজিট / এড করতে পারবেন</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-users"></i>
+      <h3>121,460+ একটি প্লেয়ার</h3>
+      <p>আমাদের সাথে যুক্ত রয়েছেন হাজারো সক্রিয় প্লেয়ার</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-coins"></i>
+      <h3>দ্রুত উইথড্র</h3>
+      <p>অল্প কিছু সময়ের মধ্যে খুব দ্রুত আপনার টাকা উত্তোলন</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-trophy"></i>
+      <h3>টুর্নামেন্ট</h3>
+      <p>ছোট কিংবা বড়, সকল ধরণের ম্যাচ খেলার সুযোগ</p>
+    </div>
+  </div>
+  <div class="cta">
+    <p style="font-size: 20px; margin-bottom: 15px;">এখনই ডাউনলোড করুন এবং খেলা শুরু করুন!</p>
+    <button>Download App</button>
+  </div>
+  <div class="section title">আমাদের রেটিং</div>
+  <div class="rating-section">
+    <div class="stars">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+    </div>
+    <div class="rating-value">4.8</div>
+    <div class="rating-label">out of 5</div>
+    <div class="rating-bars">
+      <div class="bar-row"><div class="bar-label">5</div><div class="bar bar-5"><span></span></div></div>
+      <div class="bar-row"><div class="bar-label">4</div><div class="bar bar-4"><span></span></div></div>
+      <div class="bar-row"><div class="bar-label">3</div><div class="bar bar-3"><span></span></div></div>
+      <div class="bar-row"><div class="bar-label">2</div><div class="bar bar-2"><span></span></div></div>
+      <div class="bar-row"><div class="bar-label">1</div><div class="bar bar-1"><span></span></div></div>
+    </div>
+  </div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>ব্যবহারকারীর ফিডব্যাক | লুডু টুর্নামেন্ট</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto:wght@400&display=swap" rel="stylesheet">
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Feedback Section Styles */
+    .feedback-section {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 600px;
+      padding: 20px;
+      text-align: center;
+      margin-top: 20px;
+      overflow: hidden;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Feedback Header */
+    .feedback-section h2 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 20px;
+      font-weight: 500;
+      background: linear-gradient(45deg, #ff6a00, #ee0979);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    /* Feedback Block */
+    .feedback-block {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Hover effect for Feedback Block */
+    .feedback-block:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Image in Feedback Block */
+    .feedback-block img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    /* Hover effect for image */
+    .feedback-block img:hover {
+      transform: scale(1.1);
+    }
+
+    /* Feedback Text */
+    .feedback-text {
+      flex-grow: 1;
+      font-size: 16px;
+      color: #fff;
+      line-height: 1.5;
+    }
+
+    /* User Rating */
+    .user-rating {
+      font-size: 18px;
+      color: #ffba08;
+      transition: color 0.3s ease;
+    }
+
+    /* Hover effect for rating */
+    .feedback-block:hover .user-rating {
+      color: #ffd700;
+    }
+
+    /* Mobile-Friendly Design */
+    @media (max-width: 600px) {
+      .feedback-section {
+        padding: 15px;
+      }
+
+      .feedback-block {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .feedback-block img {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+    }
+
+    /* Scoped Styling to Avoid Interference with Other Code */
+    .feedback-section .feedback-block {
+      position: relative;
+      z-index: 1;
+    }
+
+    .feedback-section .feedback-block img {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Add Additional Class for Isolation */
+    .feedback-section .feedback-block p {
+      font-size: 14px !important;
+    }
+
+    .feedback-section .user-rating {
+      font-size: 20px !important;
+    }
+
+    .feedback-section h2 {
+      font-size: 28px !important;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Feedback Section -->
+  <div class="feedback-section">
+    <h2>ব্যবহারকারীর ফিডব্যাক</h2>
+<!-- Feedback Block 1 -->
+<div class="feedback-block">
+  <img src="https://assets.onecompiler.app/43ea4pg72/43ejj2bd9/user-response.png" alt="User Image">
+  <div class="feedback-text">
+    <p>"অভিনব এবং মজাদার অভিজ্ঞতা! টুর্নামেন্টটি অবিস্মরণীয় ছিল।"</p>
+  </div>
+  <div class="user-rating">⭐⭐⭐⭐⭐</div>
+</div>
+
+<!-- Feedback Block 2 -->
+<div class="feedback-block">
+  <img src="https://assets.onecompiler.app/43ea4pg72/43ejj2bd9/user-response.png" alt="User Image">
+  <div class="feedback-text">
+    <p>"খেলার পরিবেশ অসাধারণ ছিল। পুরস্কার জেতার সুযোগ দুর্দান্ত!"</p>
+  </div>
+  <div class="user-rating">⭐⭐⭐⭐⭐</div>
+</div>
+
+<!-- Feedback Block 3 -->
+<div class="feedback-block">
+  <img src="https://assets.onecompiler.app/43ea4pg72/43ejj2bd9/user-response.png" alt="User Image">
+  <div class="feedback-text">
+    <p>"এটা ছিল এক অবিস্মরণীয় অভিজ্ঞতা! খেলা খুবই উত্তেজনাপূর্ণ।"</p>
+  </div>
+  <div class="user-rating">⭐⭐⭐⭐⭐</div>
+</div>
+
+<!-- Feedback Block 4 -->
+<div class="feedback-block">
+  <img src="https://assets.onecompiler.app/43ea4pg72/43ejj2bd9/user-response.png" alt="User Image">
+  <div class="feedback-text">
+    <p>"খেলা এতই চমৎকার ছিল যে আমি আবার অংশগ্রহণ করতে চাই।"</p>
+  </div>
+  <div class="user-rating">⭐⭐⭐⭐⭐</div>
+</div>
+
+<!-- Feedback Block 5 -->
+<div class="feedback-block">
+  <img src="https://assets.onecompiler.app/43ea4pg72/43ejj2bd9/user-response.png" alt="User Image">
+  <div class="feedback-text">
+    <p>"অসাধারণ আনন্দের মুহূর্ত! পুরস্কারও খুব আকর্ষণীয় ছিল।"</p>
+  </div>
+  <div class="user-rating">⭐⭐⭐⭐⭐</div>
+</div>
+
+<!-- Feedback Block 6 -->
+<div class="feedback-block">
+  <img src="https://assets.onecompiler.app/43ea4pg72/43ejj2bd9/user-response.png" alt="User Image">
+  <div class="feedback-text">
+    <p>"খেলার আয়োজন ছিল খুবই সুষ্ঠু এবং মজাদার। আমি খুব খুশি।"</p>
+  </div>
+  <div class="user-rating">⭐⭐⭐⭐⭐</div>
+</div>
+
+<!-- Feedback Block 7 -->
+<div class="feedback-block">
+  <img src="https://assets.onecompiler.app/43ea4pg72/43ejj2bd9/user-response.png" alt="User Image">
+  <div class="feedback-text">
+    <p>"একটি চমৎকার টুর্নামেন্ট! খেলতে খেলতে সময় চলে গিয়েছিল।"</p>
+  </div>
+  <div class="user-rating">⭐⭐⭐⭐⭐</div>
+</div>
+
+<!-- Feedback Block 8 -->
+<div class="feedback-block">
+  <img src="https://assets.onecompiler.app/43ea4pg72/43ejj2bd9/user-response.png" alt="User Image">
+  <div class="feedback-text">
+    <p>"খেলাটি ছিল উত্তেজনা এবং আনন্দের একটি দুর্দান্ত সংমিশ্রণ।"</p>
+  </div>
+  <div class="user-rating">⭐⭐⭐⭐⭐</div>
+</div>
+
+<!-- Feedback Block 9 -->
+<div class="feedback-block">
+  <img src="https://assets.onecompiler.app/43ea4pg72/43ejj2bd9/user-response.png" alt="User Image">
+  <div class="feedback-text">
+    <p>"অভিনব আয়োজন! খেলায় সবাই মজা পেয়েছে।"</p>
+  </div>
+  <div class="user-rating">⭐⭐⭐⭐⭐</div>
+</div>
+
+<!-- Feedback Block 10 -->
+<div class="feedback-block">
+  <img src="https://assets.onecompiler.app/43ea4pg72/43ejj2bd9/user-response.png" alt="User Image">
+  <div class="feedback-text">
+    <p>"খেলার উত্তেজনা এবং পুরস্কার আমাকে আবারও অংশগ্রহণ করতে উৎসাহিত করেছে।"</p>
+  </div>
+  <div class="user-rating">⭐⭐⭐⭐⭐</div>
+</div>
+
+<!-- Feedback Block 11 -->
+<div class="feedback-block">
+  <img src="https://assets.onecompiler.app/43ea4pg72/43ejj2bd9/user-response.png" alt="User Image">
+  <div class="feedback-text">
+    <p>"অসাধারণ আয়োজন! সবাইকে অন্তর্ভুক্ত করা হয়েছিল এবং মজা ছিল সবার।"</p>
+  </div>
+  <div class="user-rating">⭐⭐⭐⭐⭐</div>
+</div>
+</body>
+</html>
+<!DOCTYPE html><html lang="en">
+  <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feedback Form</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <style>
+  .premium-feedback-form {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  padding: 2rem;
+  max-width: 400px;
+  margin: 2rem auto;
+  border
